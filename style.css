@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #548687;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 2rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#heading {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.mode-btn, .starter-btn, .start-btn, .back-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    border: none;
+    color: #fff;
+    background-color: #023047;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+#quit-btn {
+    background-color: #d9534f; /* A red color to signify quitting */
+}
+
+#quit-btn:hover {
+    background-color: #c9302c; /* A slightly darker red on hover */
+}
+
+.back-btn {
+    background-color: #f44336;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+#back-to-menu-btn {
+    padding: 0.5rem;
+    font-size: 2rem;
+    background-color: rgba(1, 2, 3, 0.7);
+}
+
+#mode-selection-container, #starter-selection-container, #name-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#player1-name, #player2-name, #player1-symbol, #player2-symbol {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 200px;
+    margin-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.game {
+    height: 65vmin;
+    width: 65vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.btn {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(1, 2, 3, 0.7);
+    font-size: 8vmin;
+    color: #b042E1;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#rst, .ng {
+    margin: 0rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    border: none;
+    color: #fff;
+    background-color: rgba(1, 2, 3, 0.7);
+    cursor: pointer;
+}
+
+#msg {
+    color: #fff;
+    font-size: 5vmin;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vmin;
+    font-size: 8vmin;
+}
