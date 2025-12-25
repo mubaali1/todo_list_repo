@@ -1,61 +1,189 @@
-/* CSS Reset — place near the top of the file */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+/* General Body & Layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    /* Vibrant gradient background */
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5vh;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #567b8e;
+/* Container with "glassmorphism" effect */
+.todo-container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 90%;
+    max-width: 550px;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 h1 {
-    background-color: #f4f4f4;
-    padding: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin: 0 0 1.5rem 0;
     text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* Input area */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
 }
 
 input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #cca1a1;
-    border-radius: 4px;
+    flex-grow: 1;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #333;
 }
 
+input[type="text"]::placeholder {
+    color: #555;
+}
+
+input[type="text"]:focus {
+    border-color: #2193b0;
+    box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.3);
+}
+
+/* Base button style */
 button {
-    padding: 10px 15px;
+    padding: 10px 16px;
     border: none;
-    border-radius: 4px;
-    background-color: #5cb85c;
+    border-radius: 8px;
     color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    background-color: #4cae4c;
+button:active {
+    transform: scale(0.97);
 }
 
+/* Add Button */
+.add-btn {
+    padding: 14px 24px;
+    font-size: 1rem;
+    background-color: #ff6f61; /* Coral color */
+}
+
+.add-btn:hover {
+    background-color: #e65a50;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Task List */
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+    padding: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.4);
 }
-
+li:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
 li:last-child {
     border-bottom: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
-span {
+
+li span {
     flex-grow: 1;
-    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+    color: #1a5276;
+}
+
+/* Style for input field during edit */
+li input[type="text"] {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Completed Task Style */
+li.completed span {
+    text-decoration: line-through;
+    color: #808b96;
+}
+
+/* Edit and Delete Buttons */
+.Edit, .Delete {
+    opacity: 0.7;
+    transform: scale(0.95);
+}
+
+li:hover .Edit, li:hover .Delete {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.Edit {
+    background-color: #f39c12; /* Orange */
+}
+.Edit:hover {
+    background-color: #d35400;
+}
+.Edit.Save {
+    background-color: #2ecc71; /* Green */
+}
+.Edit.Save:hover {
+    background-color: #27ae60;
+}
+
+.Delete {
+    background-color: #e74c3c; /* Red */
+}
+
+.Delete:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .todo-container {
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-group {
+        flex-direction: column;
+    }
+    .add-btn {
+        width: 100%;
+    }
 }

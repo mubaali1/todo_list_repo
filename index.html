@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modern Todo List</title>
     <link rel="stylesheet" href="todo_list.css">
 </head>
-
 <body>
-    <h1>Todo List</h1>
-    <input type="text" placeholder="New Todo Item">
-    <button>Add</button>
-    <ul>
-        <li>Sample task 1<button class="Delete">Delete</button></li>
-        <li>Sample task 2<button class="Delete">Delete</button></li>
-    </ul>
+
+    <div class="todo-container">
+        <h1>Todo List</h1>
+        
+        <div class="input-group">
+            <input type="text" placeholder="Add a new task...">
+            <button class="add-btn">Add</button>
+        </div>
+
+        <ul>
+            <li>
+                <span>Sample task 1</span>
+                <button class="Edit">Edit</button>
+                <button class="Delete">Delete</button>
+            </li>
+            <li>
+                <span>Sample task 2</span>
+                <button class="Edit">Edit</button>
+                <button class="Delete">Delete</button>
+            </li>
+        </ul>
+    </div>
 
     <script src="todo_list.js"></script>
-
 </body>
-
 </html>
